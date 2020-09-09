@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
+gem 'rails', '6.0.3'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -15,6 +15,35 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+#
+gem 'trailblazer', '~> 2.1'
+gem "trailblazer-rails", '~> 2.1'
+gem "trailblazer-cells"
+gem "trailblazer-loader"
+gem "cells-erb"         # Or cells-haml, cells-slim, cells-hamlit.
+gem "cells-rails"
+gem 'trailblazer-test'
+
+gem "trailblazer-operation"
+gem "reform", ">= 2.2.0"
+gem "reform-rails"
+gem "trailblazer-macro-contract"
+gem "dry-validation"
+gem "dry-schema"
+
+gem 'grape'
+gem 'grape_on_rails_routes'
+
+gem 'grape-active_model_serializers'
+
+gem 'rack-cors', :require => 'rack/cors'
+
+gem 'roar-jsonapi', '~> 0.0.3'
+gem 'fast_jsonapi'
+gem 'multi_json'
+
+gem 'yajl-ruby', require: 'yajl'
+gem 'jwt'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -32,13 +61,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'enumerated_attribute'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap', '~> 1.1', '>= 1.1.7', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
+  gem 'pry-rails'
 end
 
 group :development do
